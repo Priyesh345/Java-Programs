@@ -1,0 +1,19 @@
+public class Recursion2
+{
+    int getsum(int n)
+    {
+	if(n==0)
+	    return 0;
+	else
+	    return getsum(n/10)+n%10;
+    }
+
+    public static void main(String[] args)
+    {
+	Recursion2 obj= new Recursion2();
+	System.out.println(obj.getsum(252));
+    }
+}
+
+
+

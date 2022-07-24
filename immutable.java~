@@ -1,0 +1,12 @@
+import java.lang.String;
+public class immutable
+{
+    public static void main(String[] args)
+    {
+	String s="Sachin";
+	String s1="SACHIN";
+	String s2=new String("tendulkar");
+	System.out.println(s.equalsIgnorecase(s1));
+	System.out.println(s.equals(s2));
+    }
+}

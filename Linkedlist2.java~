@@ -1,0 +1,87 @@
+import java.util.Scanner;
+public class Linkedlist2
+{
+    class Node
+    {
+	int data;
+	Node next;
+	Node(int data)
+	{
+	    this.data=data;
+	    this.next=null;
+	}
+
+    }
+
+    Node head=null;
+    public void create()
+    {
+	int data,n,m;
+	Scanner ts=new Scanner(System.in);
+	do
+	    {
+		System.out.print("Enter data: ");
+		data=ts.nextInt();
+		Node newnode=new Node(data);
+
+		if(head==null)
+		    {
+			head=newnode;
+		    }
+		else
+		    {
+			System.out.print("At the beginning,Press:1,At the end,Press:2,At the position,Press:2: ");
+			m=ts.nextInt();
+			switch(m)
+			    {
+			    case 1:
+				newnode.next=head;
+				head=newnode;
+				break;
+			    case 2:
+				Node temp=head;
+				while(temp!=null)
+				    {
+					temp=temp.next;
+				    }
+				temp.next=newnode;
+				break;
+			    case 3:
+				Node temp1=head;
+				int p;
+				Scanner am=new Scanner(System.in);
+				p=am.nextInt();
+				for(int i=0;i<(p-1);i++)
+				    {
+					temp1=temp1.next;
+				    }
+				newnode.next=temp1.next;
+				temp1.next=newnode;
+			    }
+			System.out.print("DO you want to enter more data,if yes Press:1: ");
+			n=ts.nextInt();
+		    }
+		    }
+	while(n==1);
+		    }
+			
+    
+
+    public void traverse()
+    {
+	Node temp=head;
+	while(temp!=null)
+	    {
+		System.out.print(temp.data+"-->");
+		temp=temp.next;
+	    }
+    }
+
+    public static void main(String[] args)
+    {
+	Linkedlist2 obj=new Linkedlist2();
+	obj.create();
+	obj.traverse();
+    }
+}
+	
